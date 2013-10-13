@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  {% load staticfiles %}
+  <link rel="stylesheet" href="{% static "css/style.css" %}" />
+
+  <title>EIDOLA RECORDS | {% block title %}{% endblock %}</title>
+</head>
+
+<body>
+  <header>
+    <img src="{% static "img/logo_recordplayer.png" %}" class="logo"/>
+    <h1>EIDOLA RECORDS</h1>
+    <ul>
+      <li>NEWS</li>
+      <li>RELEASES</li>
+      <li>ARTISTS</li>
+    </ul>
+  </header>
+  <div id="main">
+    <div id="sidebar">
+        {% block sidebar %}
+        
+        {% endblock %}
+    </div>
+
+    <div id="content">
+        {% block content %}{% endblock %}
+    </div>
+  </div>
+  <footer></footer>
+</body>
+</html>

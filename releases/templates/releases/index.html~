@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}RELEASES{% endblock %}
+
+{% block content %}
+{% if releases_list %}
+<ul>
+  {% for release in releases_list %}
+  <li>
+    <img src="{{ MEDIA_URL }}{{ release.coverimage.name }}" />
+    <a href="{% url 'releases:detail'  release.id %}">{{release.title}}</a>
+  </li>
+  {% endfor %}
+</ul>
+{% else %}
+<p>No Releases found</p>
+{% endif %}
+{% endblock %}

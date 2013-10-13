@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}ARTISTS{% endblock %}
+
+{% block content %}
+<h1>ARTISTS</h1>
+{% if artists_list %}
+<div id="artists">
+  {% for artist in artists_list %}
+  <div class="artist">
+    <h1><a href="{% url 'artists:detail'  artist.id %}">{{artist.name}}</a></h1>
+    <img class="artist-img" src="{{ MEDIA_URL }}{{ artist.image.name }}" />
+  </div>
+  {% endfor %}
+{% else %}
+<p>No Artists found</p>
+{% endif %}
+{% endblock %}

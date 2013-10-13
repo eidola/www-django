@@ -1,0 +1,53 @@
+@import url("/static/fonts/leaguegothic/stylesheet.css");
+@import url("/static/fonts/junction/stylesheet.css");
+
+body{
+    margin: 0 auto;
+}
+header{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #a40000;
+    color: #fff;
+}
+header > img.logo{
+    height: 200px;
+    float: left;
+}
+header > h1 {
+    font-family:'League Gothic', sans-serif;
+    font-size: 72px;
+    letter-spacing:1px;
+} 
+header > ul {
+    list-style: none;
+}
+header > ul > li {
+    float:left;
+    margin-left: 15px;
+    font-family: 'League Gothic', sans-serif;
+    font-size: 24px;
+    letter-spacing: 1px;
+}
+body h1 {
+    font-family:'League Gothic', sans-serif;
+    font-size: 48px;
+    letter-spacing:1px;
+}
+body p {
+    font-family: 'Junction';
+    line-height: 1.2em;
+}
+body > div#main {
+    padding-top: 200px;
+}
+body > div#main > div#sidebar {
+    width: 194px;
+    position: fixed;
+    left: 0;
+    top: 200px;
+}
+body > div#main > div#content {
+    margin-left: 200px;
+}
