@@ -4,30 +4,19 @@
 {% block content %}
 <h1>RELEASES</h1>
 {% if releases_list %}
-<div class="releases">
+<div id="releases">
   {% for release in releases_list %}
-  <div>
-    <img src="{{ MEDIA_URL }}{{ release.coverimage.name }}" />
-    <h1><a href="{% url 'releases:detail'  release.id %}">{{release.title}}</a></h1>
-    {% for artist in release.artists.all %}
-    <p>{{ artist.name }}</p>
-    {% endfor %}
-    <table>
-      <thead>
-	<tr>
-	  <td>#</td>
-	  <td>Title</td>
-	</tr>
-      </thead>
-      <tbody>
-	{% for track in release.track_set.all %}
-	<tr>
-	  <td>{{track.sequence}}</td>
-	  <td>{{ track.title }}</td>
-	</tr>
-	{% endfor %}
-      </tbody>
-    </table>
+  <div class="release">
+    <div class="cover">
+      <h1><a class="white" href="{% url 'releases:detail'  release.id %}">{{release.title}}</a></h1>    
+      <img class="release-img" src="{{ MEDIA_URL }}{{ release.coverimage.name }}" />
+    </div>
+    <div  class="detail">
+      {% for artist in release.artists.all %}
+      <p><a href="{% url 'artists:detail' artist.id %}" class="artist-link">{{ artist.name }}</a></p>
+      {% endfor %}
+      <p>{{ release.description }}</p>
+    </div>
   </div>
   {% endfor %}
 </div>

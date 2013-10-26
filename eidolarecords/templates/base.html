@@ -4,7 +4,10 @@
 <head>
   {% load staticfiles %}
   <link rel="stylesheet" href="{% static "css/style.css" %}" />
+  <!-- Move these if possible so they are only called when needed -->
   <link rel="stylesheet" href="{% static "artists/css/artists.css" %}" />
+  <link rel="stylesheet" href="{% static "releases/css/releases.css" %}" />
+  <!-- end -->
   <title>EIDOLA RECORDS | {% block title %}{% endblock %}</title>
 </head>
 
@@ -13,18 +16,15 @@
     <img src="{% static "img/logo_recordplayer.png" %}" class="logo"/>
     <h1>EIDOLA RECORDS</h1>
     <ul>
-      <li><a href="/news/">NEWS</a></li>
-      <li><a href="/releases/">RELEASES</a></li>
-      <li><a href="/artists/">ARTISTS</a></li>
+      <li><a class="white" href="/news/">NEWS</a></li>
+      <li><a class="white" href="/releases/">RELEASES</a></li>
+      <li><a class="white" href="/artists/">ARTISTS</a></li>
     </ul>
   </header>
   <div id="main">
     <div id="sidebar">
-        {% block sidebar %}
-        
-        {% endblock %}
+        {% block sidebar %}{% endblock %}
     </div>
-
     <div id="content">
         {% block content %}{% endblock %}
     </div>

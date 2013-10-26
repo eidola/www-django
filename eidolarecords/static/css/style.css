@@ -39,16 +39,25 @@ body p {
     font-family: 'Junction';
     line-height: 1.2em;
 }
-a,
-a:hover,
-a:active,
-a:visited {
+a.black,
+a.black:hover,
+a.black.active,
+a.black.visited {
+    text-decoration:none;
+    color:#000;
+}
+a.white,
+a.white:hover,
+a.white.active,
+a.white.visited {
     text-decoration:none;
     color:#fff;
 }
 
 body > div#main {
     padding-top: 200px;
+    margin: 0 auto;
+    width: 960px;
 }
 body > div#main > div#sidebar {
     width: 194px;
@@ -57,5 +66,5 @@ body > div#main > div#sidebar {
     top: 200px;
 }
 body > div#main > div#content {
-    margin-left: 200px;
+    margin: 0 auto;
 }

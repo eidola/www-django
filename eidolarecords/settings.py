@@ -74,6 +74,7 @@ STATICFILES_DIRS = (
     # Don't forget to use absolute paths, not relative paths.
     "/home/james/Projects/Eidola Records/WWW/django/eidolarecords/eidolarecords/static/",
     "/home/james/Projects/Eidola Records/WWW/django/eidolarecords/artists/static/",
+    "/home/james/Projects/Eidola Records/WWW/django/eidolarecords/releases/static/",
 )
 
 # List of finder classes that know how to find static files in
@@ -123,6 +124,7 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.markup',
     # Uncomment the next line to enable the admin:
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:

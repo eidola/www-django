@@ -1,1 +1,22 @@
-<p>{{release.title}}</p>
+{% extends "base.html" %}
+
+{% block title %}{{ release.title }}{% endblock %}
+{% block content %}
+<h1>{{ release.title }}</h1>
+<table>
+  <thead>
+    <tr>
+      <td>#</td>
+      <td>Title</td>
+    </tr>
+  </thead>
+  <tbody>
+    {% for track in release.track_set.all %}
+    <tr>
+      <td>{{track.sequence}}</td>
+      <td>{{ track.title }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

@@ -3,14 +3,26 @@
 {% block title %}{{ artist.name }}{% endblock %}
 
 {% block content %}
-<div class="artist">
+<div id="artist">
   <div class="details">
     <h1>{{ artist.name }}</h1>
     <img class="artist-img" src="{{ MEDIA_URL }}{{ artist.image.name }}" />
-    <p>{{ artist.description }}</p>
-  </div>
-  <div class="releases">
-
+    {% load markup %} 
+    <p>{{ artist.description | markdown:'safe' }}</p>
   </div>
 </div>
+{% endblock %}
+
+{% block sidebar %}
+<div id="releases">
+  <h1>Releases</h1>
+    {% for release in artist.release_set.all %}
+    <div class="release">
+	 <div class="cover">
+	   <h1><a class="white" href="{% url 'releases:detail'  release.id %}">{{release.title}}</a></h1>    
+	   <img class="release-img" src="{{ MEDIA_URL }}{{ release.coverimage.name }}" />
+	 </div>
+    </div>
+    {% endfor %}
+  </div>
 {% endblock %}
