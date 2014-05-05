@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}NEWS{% endblock %}
+
+{% block content %}
+<h1>NEWS</h1>
+{% if article_list %}
+<div id="articles">
+  {% for article in articles %}
+  <div class="article">
+    <h1><a class="white" href="{% url 'article:detail'  article.id %}">{{article.title}}</a></h1>
+    {% load thumbnail %}
+    <img src="{{ article.image|thumbnail_url:'avatar' }}" alt="" />
+  </div>
+  {% endfor %}
+{% else %}
+<p>No Articles found</p>
+{% endif %}
+{% endblock %}
